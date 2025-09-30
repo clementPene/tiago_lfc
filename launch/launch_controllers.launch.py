@@ -85,7 +85,6 @@ def generate_launch_description():
 
     return LaunchDescription([
         pkg_arg, lfc_yaml_arg, jse_yaml_arg, pc_yaml_arg,
-        # cm_arg, arm_arg,  # si tu les utilises
         spawn_linear_feedback_controller,
         chain_spawn_joint_state_estimator,
         chain_spawn_passthrough_controller,

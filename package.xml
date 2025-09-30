@@ -3,8 +3,8 @@
 <package format="3">
   <name>tiago_lfc</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="cpene@todo.todo">cpene</maintainer>
+  <description>Implementation of a linear feedback controller for Tiago</description>
+  <maintainer email="pene.clement@gmail.com">cpene</maintainer>
   <license>Apache2.0</license>
 
   <depend>launch</depend>
