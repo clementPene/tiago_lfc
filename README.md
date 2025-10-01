@@ -6,7 +6,8 @@ This repository is aimed to be used with Tiago Harmonic workspace. You can find 
 Clone the repo inside your tiago workspace and build it with colcon
 
 ```bash
-colcon build --symlink-install --packages-select tiago_lfc
+# colcon build --symlink-install --packages-select tiago_lfc
+colcon build --symlink-install --cmake-args -DBUILD_TESTING=OFF -DCMAKE_BUILD_TYPE=Release -DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 ```
 
 ## Usage
@@ -24,6 +25,13 @@ It will deactivate current arm_controller and activate torque control with a lin
 > 3 controllers are packaged together and are in chained mode.
 > hardware -> Joint-state-estimator -> Linear-feedback-controller -> Passthrough-controller -> hardware
 
+
+## Tiago Configuration
+
+I modified tiago robot conf : tiago_description/config/tiago_configuration.yaml
+and launch_pal/robot_arguments/common.py
+
+I also modified default settings : 
 
 ## Authors
 * Clément Pène - pene.clement@gmail.com
