@@ -12,8 +12,10 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         # install launch files and config files
-        ('share/' + package_name + '/launch', glob('launch/*.launch.py')),
-        ('share/' + package_name + '/config', glob('config/*.yaml')),
+        ('share/' + package_name + '/launch',
+            glob('launch/*.launch.py') + glob(package_name + '/launch/*.launch.py')),
+        ('share/' + package_name + '/config',
+            glob('config/*.yaml') + glob(package_name + '/config/*.yaml')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
