@@ -50,6 +50,7 @@ def generate_launch_description():
     )
 
     # Deactivate the old arm controller if present
+    # TODO : can it works without being deactivated, as it does not use same hardware interface ?
     deactivate_arm = ExecuteProcess(
         cmd=[
             'ros2', 'control', 'switch_controllers',
