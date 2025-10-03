@@ -23,6 +23,7 @@ def generate_launch_description():
     # Spawner for all 3 controllers
     spawn_linear_feedback_controller = Node(
         package='controller_manager', executable='spawner',
+        name='spawner_linear_feedback_controller',
         arguments=[
             'linear_feedback_controller',
             '--inactive',
@@ -32,6 +33,7 @@ def generate_launch_description():
     )
     spawn_joint_state_estimator = Node(
         package='controller_manager', executable='spawner',
+        name='spawner_joint_state_estimator',
         arguments=[
             'joint_state_estimator',
             '--inactive',
@@ -41,6 +43,7 @@ def generate_launch_description():
     )
     spawn_passthrough_controller = Node(
         package='controller_manager', executable='spawner',
+        name='spawner_passthrough_controller',
         arguments=[
             'passthrough_controller',
             '--inactive',
