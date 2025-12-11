@@ -16,6 +16,7 @@ colcon build --symlink-install \
     --packages-select tiago_lfc \
                       linear_feedback_controller_msgs \
                       linear_feedback_controller
+colcon build --symlink-install
 ```
 
 ## Usage
@@ -29,7 +30,7 @@ Useful launch files can be found under directory tiago_lfc/launch
 # launch tiago in gazebo
 ros2 launch tiago_lfc tiago_gazebo.launch.py world_name:=house # or empty
 # Load lfc controllers
-ros2 launch tiago_lfc launch_controllers.launch.py 
+ros2 launch tiago_lfc switch_to_lfc_controllers.launch.py
 ```
 
 > [!note]
@@ -42,7 +43,8 @@ Concreate application can be found in launch folder at the root of the package.
 
 |**Launch file**                  | **Description**                                                                                     |
 |---------------------------------|---------------------------------------------------------------------------------------------------|
-|`pd_plus_controller.launch.py`   |Use pd plus exemple found in lfc package                        
+|`pd_plus_controller.launch.py`   |Use pd plus exemple found in lfc package. **TODO :** find a beter way to wait for controllers spawn before launching pd_controller node
+
 
 
 ## Authors
