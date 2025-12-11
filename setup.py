@@ -1,5 +1,6 @@
 from setuptools import find_packages, setup
 from glob import glob
+import os
 
 package_name = 'tiago_lfc'
 
@@ -11,11 +12,10 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        # install launch files and config files
-        ('share/' + package_name + '/launch',
-            glob('launch/*.launch.py') + glob(package_name + '/launch/*.launch.py')),
-        ('share/' + package_name + '/config',
-            glob('config/*.yaml') + glob(package_name + '/config/*.yaml')),
+        # Installer TOUS les launch files
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
+        # Installer TOUS les config files
+        (os.path.join('share', package_name, 'config'), glob('config/*.yaml')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -30,6 +30,9 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'test_loader = tiago_lfc.test_loader:main',
+            'test_mpc_pure = tiago_lfc.test_mpc_pure:main',
+            'mpc_node = tiago_lfc.mpc_node:main',
         ],
     },
 )
